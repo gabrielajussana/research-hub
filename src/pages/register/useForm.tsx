@@ -15,7 +15,12 @@ const types: Types = {
   },
   password: {
     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
-    message: "Sua senha está incorreta, tente novamente!",
+    message:
+      "A senha deve conter no mínimo 8 caracteres, incluindo pelo menos um número, uma letra minúscula e uma letra maiúscula.",
+  },
+  name: {
+    regex: /^[A-Za-zÀ-ÖØ-öø-ÿ]+(?: [A-Za-zÀ-ÖØ-öø-ÿ]+)*$/,
+    message: "Nome inválido",
   },
 };
 
