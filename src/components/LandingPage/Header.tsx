@@ -1,12 +1,19 @@
 import LogoResearchhub from "../../assets/logo-research-hub.png";
+import ImgUser from "../../assets/ImgUser.png";
 import Image from "next/image";
 import { Button, Flex, Heading, Link } from "@chakra-ui/react";
 
 interface HeaderProps {
-  showLinksAndButton?: boolean;
+  showButton?: boolean;
+  showLink?: boolean;
+  showUser?: boolean;
 }
 
-export default function Header({ showLinksAndButton = true }: HeaderProps) {
+export default function Header({
+  showLink = true,
+  showButton = true,
+  showUser = false,
+}: HeaderProps) {
   return (
     <Flex h="10vh" justifyContent="space-around" alignItems="center" p={4}>
       <Flex alignItems="center">
@@ -15,14 +22,14 @@ export default function Header({ showLinksAndButton = true }: HeaderProps) {
           Research<span style={{ color: "#FF8500" }}>Hub</span>
         </Heading>
       </Flex>
-      {showLinksAndButton && (
+      {showLink && (
         <Flex gap="40px" display={{ base: "none", md: "flex" }}>
           <Link>Home</Link>
           <Link>Projetos</Link>
           <Link>Perfil</Link>
         </Flex>
       )}
-      {showLinksAndButton && (
+      {showButton && (
         <Button
           color="white"
           bg="#5A189A"
@@ -30,6 +37,16 @@ export default function Header({ showLinksAndButton = true }: HeaderProps) {
           _hover={{ opacity: 0.8 }}
         >
           Login / Cadastro
+        </Button>
+      )}
+      {showUser && (
+        <Button
+          bg="none"
+          borderRadius="full"
+          boxSize="100px"
+          _hover={{ opacity: 0.8 }}
+        >
+          <Image src={ImgUser} alt="Imagem do usuário" />
         </Button>
       )}
     </Flex>

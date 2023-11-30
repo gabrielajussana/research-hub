@@ -56,7 +56,7 @@ export default function Register() {
   return (
     <>
       <Flex alignItems="left">
-        <Header showLinksAndButton={false} />
+        <Header showLink={false} showButton={false} showUser={false} />
       </Flex>
       <SimpleGrid spacing={5} templateColumns="repeat(2, minmax(200px, 1fr))">
         <Image
