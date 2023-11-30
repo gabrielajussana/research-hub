@@ -1,7 +1,18 @@
 import LogoResearchhub from "../../assets/logo-research-hub.png";
 import ImgUser from "../../assets/imgUser.png";
 import Image from "next/image";
-import { Button, Flex, Heading, Link } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  Link,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuGroup,
+  MenuItem,
+  MenuDivider,
+} from "@chakra-ui/react";
 
 interface HeaderProps {
   showButton?: boolean;
@@ -40,14 +51,28 @@ export default function Header({
         </Button>
       )}
       {showUser && (
-        <Button
-          bg="none"
-          borderRadius="full"
-          boxSize="100px"
-          _hover={{ opacity: 0.8 }}
-        >
-          <Image src={ImgUser} alt="Imagem do usuário" />
-        </Button>
+        <Menu>
+          <MenuButton
+            as={Button}
+            bg="none"
+            borderRadius="full"
+            boxSize="100px"
+            _hover={{ opacity: 0.8 }}
+          >
+            <Image src={ImgUser} alt="Imagem do usuário" />
+          </MenuButton>
+          <MenuList>
+            <MenuGroup title="Profile" color="#5A189A">
+              <MenuItem>My Account</MenuItem>
+              <MenuItem>Payments </MenuItem>
+            </MenuGroup>
+            <MenuDivider />
+            <MenuGroup title="Help" color="#5A189A">
+              <MenuItem>Docs</MenuItem>
+              <MenuItem>FAQ</MenuItem>
+            </MenuGroup>
+          </MenuList>
+        </Menu>
       )}
     </Flex>
   );

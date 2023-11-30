@@ -18,7 +18,7 @@ export default function ProjectListing() {
   };
 
   return (
-    <div>
+    <>
       <Header showLink={true} showButton={false} showUser={true} />
       <Flex
         ps="fixed"
@@ -62,7 +62,7 @@ export default function ProjectListing() {
                   <Text as="b" w="full" fontSize="16px">
                     {projeto.titulo}
                   </Text>
-                  <p>
+                  <Box>
                     <Flex color="black">
                       {Array.from({ length: projeto.estrelas }).map(
                         (_, index) => (
@@ -75,7 +75,7 @@ export default function ProjectListing() {
                         )
                       )}
                     </Flex>
-                  </p>
+                  </Box>
                 </Box>
                 <Button
                   w="10rem"
@@ -112,7 +112,11 @@ export default function ProjectListing() {
                   >
                     {/* inicio de cada card */}
 
-                    <Image src={DesingCard} alt="Design curvado do card" />
+                    <Image
+                      src={DesingCard}
+                      alt="Design curvado do card"
+                      priority
+                    />
                     <Img
                       style={{ marginTop: "-5rem", marginLeft: "2rem" }}
                       src={projeto.imagem}
@@ -125,7 +129,7 @@ export default function ProjectListing() {
                       <Text as="b" w="full" fontSize="16px">
                         {projeto.titulo}
                       </Text>
-                      <p>
+                      <Box>
                         <Flex color="black">
                           {Array.from({ length: projeto.estrelas }).map(
                             (_, index) => (
@@ -138,7 +142,7 @@ export default function ProjectListing() {
                             )
                           )}
                         </Flex>
-                      </p>
+                      </Box>
                     </Box>
                     <Button
                       w="10rem"
@@ -158,6 +162,6 @@ export default function ProjectListing() {
           </Box>
         </Flex>
       </Flex>
-    </div>
+    </>
   );
 }
