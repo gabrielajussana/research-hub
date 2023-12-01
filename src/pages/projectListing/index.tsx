@@ -22,18 +22,42 @@ export default function ProjectListing() {
       <Header showLink={true} showButton={false} showUser={true} />
       <Flex
         ps="fixed"
-        justifyContent="flex-start"
-        alignItems="center"
+        justifyContent={{
+          sm: "center",
+          md: "center",
+          lg: "flex-start",
+          xl: "flex-start",
+        }}
         pl="12vw"
-        pr="8rem"
+        pr={{ sm: "4rem", lg: "8rem", xl: "8rem" }}
         pt="4rem"
       >
-        <Flex alignItems="left" flexDirection="column">
+        <Flex
+          flexDirection="column"
+          alignItems={{
+            sm: "center",
+            md: "center",
+            lg: "flex-start",
+            xl: "flex-start",
+          }}
+        >
           <Text as="b" fontSize="20px">
             Categoria de projetos populares:
           </Text>
 
-          <Box display="flex" flexWrap="wrap" pt={5} pb={10} gap={8}>
+          <Box
+            display="flex"
+            flexWrap="wrap"
+            pt={5}
+            pb={10}
+            gap={8}
+            justifyContent={{
+              sm: "center",
+              md: "center",
+              lg: "flex-start",
+              xl: "flex-start",
+            }}
+          >
             {/* Box que engloba todos os cards */}
             {projetos.map((projeto) => (
               <Box
@@ -91,10 +115,24 @@ export default function ProjectListing() {
               </Box>
             ))}
           </Box>
+
           <Text as="b" fontSize="20px">
             Categoria de projetos cadastrados:
           </Text>
-          <Box display="flex" flexWrap="wrap" pt={5} pb={10} gap={8}>
+
+          <Box
+            display="flex"
+            flexWrap="wrap"
+            pt={5}
+            pb={10}
+            gap={8}
+            justifyContent={{
+              sm: "center",
+              md: "center",
+              lg: "flex-start",
+              xl: "flex-start",
+            }}
+          >
             {/* Box que engloba todos os cards */}
             {projetos.map((projeto) => {
               return (
