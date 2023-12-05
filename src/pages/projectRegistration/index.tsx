@@ -34,6 +34,7 @@ export default function projectRegistration() {
     <>
       <Header showLink={true} showButton={false} showUser={true} />
       <SimpleGrid
+        overflow="hidden"
         spacing={5}
         ml={{ base: "8vw", md: "0px" }}
         templateColumns={{
