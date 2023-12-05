@@ -11,6 +11,7 @@ import {
   Link,
   SimpleGrid,
   Button,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import peopleSearch from "../../assets/people-search-amico.svg";
 import useCustomForm from "./useForm";
@@ -31,6 +32,7 @@ const formFields = [
 ];
 
 export default function Login() {
+  const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");
   const emailProps = useCustomForm({ type: "email" });
   const passwordProps = useCustomForm({ type: "password" });
 
@@ -49,14 +51,24 @@ export default function Login() {
       <Flex alignItems="left">
         <Header showLink={false} showButton={false} showUser={false} />
       </Flex>
-      <SimpleGrid spacing={5} templateColumns="repeat(2, minmax(200px, 1fr))">
+      <SimpleGrid
+        ml={{ sm: "1rem" }}
+        spacing={5}
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(2, minmax(800px, 1fr))",
+        }}
+        overflow="hidden"
+      >
         <Box>
-          <Image
-            src={peopleSearch.src}
-            alt="People Search"
-            width={800}
-            height={800}
-          />
+          {isSmallerThan800 ? null : (
+            <Image
+              src={peopleSearch.src}
+              alt="People Search"
+              width={800}
+              height={800}
+            />
+          )}
         </Box>
         <Box justifyContent="center" alignItems="center">
           <Text fontWeight={700} fontSize={60} mb="2rem">
@@ -99,7 +111,10 @@ export default function Login() {
             ))}
             <Text mt=".5rem" ml="1rem" fontWeight={600}>
               Não tem conta?
-              <Link style={{ color: "#5A189A" }}> Cadastrar</Link>
+              <Link style={{ color: "#5A189A" }} href="/register">
+                {" "}
+                Cadastrar
+              </Link>
             </Text>
             <Button
               type="submit"
@@ -110,7 +125,7 @@ export default function Login() {
               borderRadius="8px"
               _hover={{ opacity: 0.8 }}
             >
-              Entrar
+              <Link href="/projectListing"> Entrar </Link>
             </Button>
           </form>
         </Box>
