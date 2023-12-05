@@ -13,11 +13,13 @@ import {
   Input,
   Textarea,
   Button,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import peopleShow from "../../assets/peopleShow.png";
 import categoriasData from "./data";
 
 export default function projectRegistration() {
+  const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState<
     string | null
   >(null);
@@ -31,16 +33,26 @@ export default function projectRegistration() {
   return (
     <>
       <Header showLink={true} showButton={false} showUser={true} />
-      <SimpleGrid spacing={5} templateColumns="repeat(2, minmax(200px, 1fr))">
+      <SimpleGrid
+        spacing={5}
+        ml={{ base: "8vw", md: "0px" }}
+        templateColumns={{
+          base: "1fr",
+          md: "repeat(2, minmax(800px, 1fr))",
+        }}
+        gap={0}
+      >
         <Box>
-          <Image
-            src={peopleShow.src}
-            alt="People Search"
-            width="40vw"
-            height="auto"
-          />
+          {isSmallerThan800 ? null : (
+            <Image
+              src={peopleShow.src}
+              alt="People Search"
+              width="40vw"
+              height="auto"
+            />
+          )}
         </Box>
-        <Box justifyContent="center" alignItems="center">
+        <Box ml={{ md: "-8rem" }} justifyContent="center" alignItems="center">
           <Text fontWeight={700} fontSize={45} mb="2rem">
             Publicar Projeto
           </Text>
