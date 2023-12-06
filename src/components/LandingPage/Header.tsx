@@ -3,7 +3,6 @@ import {
   Button,
   Flex,
   Heading,
-  IconButton,
   Link,
   Menu,
   MenuButton,
@@ -11,10 +10,9 @@ import {
   MenuGroup,
   MenuItem,
   MenuList,
-  useBreakpointValue,
+  useBreakpointValue
 } from "@chakra-ui/react";
 import Image from "next/image";
-import ImgUser from "../../assets/ImgUser.png";
 import LogoResearchhub from "../../assets/logo-research-hub.png";
 
 interface HeaderProps {
@@ -59,21 +57,9 @@ export default function Header({
           <MenuButton
             as={Button}
             bg="none"
-            borderRadius="full"
-            boxSize="100px"
             _hover={{ opacity: 0.8 }}
           >
-            {isMobile ? (
-              <MenuButton
-                as={IconButton}
-                aria-label="Options"
-                icon={<HamburgerIcon />}
-                variant="outline"
-                color="#5A189A"
-              />
-            ) : (
-              <Image src={ImgUser} alt="Imagem do usuário" />
-            )}
+           <HamburgerIcon boxSize={8} />
           </MenuButton>
           <MenuList>
             <MenuGroup title="Profile" color="#5A189A">

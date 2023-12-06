@@ -2,16 +2,20 @@ import Header from "@/src/components/LandingPage/Header";
 import { StarIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DesingCard from "../../assets/designCard.svg";
 import { dadosProjetos } from "./data";
 
 export default function ProjectListing() {
-  const [projetos, setProjetos] = useState(dadosProjetos);
+  const [projetos, setProjetos] = useState<any[]>([]);
+
+  useEffect(() => {
+    setProjetos(dadosProjetos);
+  }, []);
 
   const handleButtonClick = (id: number) => {
     setProjetos((prevProjetos) =>
-      prevProjetos.map((proj) =>
+      prevProjetos?.map((proj) =>
         proj.id === id ? { ...proj, cadastro: !proj.cadastro } : proj
       )
     );
@@ -19,7 +23,7 @@ export default function ProjectListing() {
 
   return (
     <>
-      <Header showLink={true} showButton={false} showUser={true} />
+      <Header showLink={true} showButton={false} showUser={true}/>
       <Flex
         ps="fixed"
         justifyContent={{
@@ -58,8 +62,7 @@ export default function ProjectListing() {
               xl: "flex-start",
             }}
           >
-            {/* Box que engloba todos os cards */}
-            {projetos.map((projeto) => (
+            {projetos?.map((projeto) => (
               <Box
                 key={projeto.id}
                 w="219px"
@@ -71,8 +74,6 @@ export default function ProjectListing() {
                 alignItems="center"
                 justifyContent="space-around"
               >
-                {/* inicio de cada card */}
-
                 <Image src={DesingCard} alt="Design curvado do card" />
                 <Img
                   style={{ marginTop: "-5rem", marginLeft: "2rem" }}
@@ -133,8 +134,7 @@ export default function ProjectListing() {
               xl: "flex-start",
             }}
           >
-            {/* Box que engloba todos os cards */}
-            {projetos.map((projeto) => {
+            {projetos?.map((projeto) => {
               return (
                 projeto.cadastro && (
                   <Box
@@ -148,8 +148,6 @@ export default function ProjectListing() {
                     alignItems="center"
                     justifyContent="space-around"
                   >
-                    {/* inicio de cada card */}
-
                     <Image
                       src={DesingCard}
                       alt="Design curvado do card"
