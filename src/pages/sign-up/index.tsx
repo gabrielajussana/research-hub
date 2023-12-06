@@ -1,20 +1,18 @@
+import Header from "@/src/components/LandingPage/Header";
 import {
-  Flex,
   Box,
-  Image,
+  Button,
   FormControl,
   FormLabel,
+  Image,
   Input,
-  Text,
-  Link,
   SimpleGrid,
-  Button,
+  Text
 } from "@chakra-ui/react";
-import Header from "@/src/components/LandingPage/Header";
 import imgNotebook from "../../assets/imgNotebook.png";
 import formFieldsSingUp from "./data";
 
-export default function singUp() {
+export default function SignUp() {
   return (
     <>
       <Header showLink={true} showButton={false} showUser={true} />

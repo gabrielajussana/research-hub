@@ -40,7 +40,7 @@ export default function Header({
       {showLink && (
         <Flex gap="40px" display={{ base: "none", md: "flex" }}>
           <Link href="/">Home</Link>
-          <Link href="/projectListing">Projetos</Link>
+          <Link href="/project-listing">Projetos</Link>
           <Link>Perfil</Link>
         </Flex>
       )}

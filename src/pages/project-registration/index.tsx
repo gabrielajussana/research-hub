@@ -1,24 +1,24 @@
 import Header from "@/src/components/LandingPage/Header";
-import React, { useState } from "react";
 import {
-  Text,
-  SimpleGrid,
-  Image,
   Box,
-  Grid,
-  GridItem,
+  Button,
   FormControl,
   FormLabel,
-  Select,
+  Grid,
+  GridItem,
+  Image,
   Input,
+  Select,
+  SimpleGrid,
+  Text,
   Textarea,
-  Button,
   useMediaQuery,
 } from "@chakra-ui/react";
+import React, { useState } from "react";
 import peopleShow from "../../assets/peopleShow.png";
 import categoriasData from "./data";
 
-export default function projectRegistration() {
+export default function ProjectRegistration() {
   const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");
   const [categoriaSelecionada, setCategoriaSelecionada] = useState<
     string | null

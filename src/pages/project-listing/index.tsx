@@ -1,9 +1,9 @@
-import { Flex, Text, Button, Box, Img } from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
 import Header from "@/src/components/LandingPage/Header";
-import DesingCard from "../../assets/designCard.svg";
+import { StarIcon } from "@chakra-ui/icons";
+import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
+import DesingCard from "../../assets/designCard.svg";
 import { dadosProjetos } from "./data";
 
 export default function ProjectListing() {
