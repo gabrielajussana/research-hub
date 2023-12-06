@@ -1,21 +1,21 @@
-import LogoResearchhub from "../../assets/logo-research-hub.png";
-import ImgUser from "../../assets/imgUser.png";
-import Image from "next/image";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Button,
   Flex,
   Heading,
+  IconButton,
   Link,
   Menu,
   MenuButton,
-  MenuList,
+  MenuDivider,
   MenuGroup,
   MenuItem,
-  MenuDivider,
-  IconButton,
+  MenuList,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Image from "next/image";
+import ImgUser from "../../assets/imgUser.png";
+import LogoResearchhub from "../../assets/logo-research-hub.png";
 
 interface HeaderProps {
   showButton?: boolean;
