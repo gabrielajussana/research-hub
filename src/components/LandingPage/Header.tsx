@@ -14,7 +14,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import ImgUser from "../../assets/imgUser.png";
+import ImgUser from "../../assets/ImgUser.png";
 import LogoResearchhub from "../../assets/logo-research-hub.png";
 
 interface HeaderProps {
