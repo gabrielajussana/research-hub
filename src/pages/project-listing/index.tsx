@@ -4,7 +4,7 @@ import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import DesingCard from "../../assets/designCard.svg";
-import dadosProjetos  from "./data";
+import dadosProjetos  from "../../components/project-listing/data";
 
 export default function ProjectListing() {
   const [projetos, setProjetos] = useState<any[]>([]);

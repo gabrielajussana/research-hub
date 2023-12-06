@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import peopleShow from "../../assets/peopleShow.png";
-import categoriasData from "./data";
+import categoriasData from "../../components/project-registration/data";
 
 export default function ProjectRegistration() {
   const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");

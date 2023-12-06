@@ -10,7 +10,7 @@ import {
   Text
 } from "@chakra-ui/react";
 import imgNotebook from "../../assets/imgNotebook.png";
-import formFieldsSingUp from "./data";
+import formFieldsSingUp from "../../components/sign-up/data";
 
 export default function SignUp() {
   return (
