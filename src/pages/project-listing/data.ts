@@ -1,6 +1,4 @@
-// dadosFicticios.ts
-
-export const dadosProjetos = [
+const dadosProjetos = [
   {
     id: 1,
     titulo: "Robotics Project",
@@ -49,3 +47,5 @@ export const dadosProjetos = [
     cadastro: true,
   },
 ];
+
+export default dadosProjetos;
