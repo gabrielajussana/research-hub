@@ -14,7 +14,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import peopleSearch from "../../assets/people-search-amico.svg";
-import useCustomForm from "./useForm";
+import useCustomForm from "../../components/login/useForm";
 
 const formFields = [
   {
